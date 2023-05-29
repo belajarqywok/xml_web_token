@@ -1,0 +1,1 @@
+cd Scripts && activate && cd ..
