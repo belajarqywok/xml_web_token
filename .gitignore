@@ -3,5 +3,5 @@
 /Include
 pyvenv.cfg
 
-.coverage
+/.coverage
 .tox
