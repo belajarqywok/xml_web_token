@@ -13,20 +13,13 @@ generate = generate_xwt(
         "iat" : "1516239022"
     },
 
-    secret_key = "SECRET_KEY"
+    secret_key = "SECRET_KEY121"
 )
 
 
 if __name__ == "__main__":
-    # Concate Header, Payload, and Signature
-    xwt_string = (
-        generate.get_raw_header_encode() +
-        "." +
-        generate.get_raw_payload_encode() +
-        "." +
-        generate.get_signature_encode()
-    )
-
+    # Get XWT Token
+    xwt_string = generate.get_xwt_token
     print(xwt_string)
 
     # Parsing XWT

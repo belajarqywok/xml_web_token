@@ -97,4 +97,15 @@ class generate_xwt(object) :
             self.get_signature().encode("utf-8")
         ).decode("utf-8")
 
-        
+
+    # Generate Token
+    @property
+    def get_xwt_token(self) -> str: 
+        return (
+            self.get_raw_header_encode() +
+            "." +
+            self.get_raw_payload_encode() +
+            "." +
+            self.get_signature_encode()
+        )
+
