@@ -10,6 +10,7 @@ class parsing_xwt(object):
         self.__raw_token: dict = {}
 
         pattern = r"^(.+)\.(.+)\.(.+)$"
+        
         match = re.match(
             pattern, 
             xwt_string
@@ -42,6 +43,7 @@ class parsing_xwt(object):
 
         # Declare Payload Schema
         self.__payload_schema: list = payload_schema
+
 
 
     # Parsing Header
@@ -88,7 +90,6 @@ class parsing_xwt(object):
                 .replace("\n", "")
         )
                 
-
         for schema in self.__payload_schema :
             # Schema Pattern
             schema_pattern = fr"<{schema.get('key')}>(.*?)</{schema.get('key')}>"
@@ -141,10 +142,12 @@ class parsing_xwt(object):
         return self.__raw_xml
 
 
+
     # Get Raw Token
     @property
     def get_raw_token(self) -> dict :
         return self.__raw_token
+
 
 
     @property
